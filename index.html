@@ -111,7 +111,7 @@
 <script type="text/javascript">
 
 $(function() {
-var req="https://api.vk.com/method/wall.get?owner_id=-43879004&count=20&v=5.37";
+var req="https://api.vk.com/method/wall.get?owner_id=-43879004&count=25&v=5.37";
 $.ajax({
 url: req,
 type: "GET",
@@ -121,7 +121,7 @@ success:function(data) {
 console.log(data);
 $.each(data.response.items, function(i,items){
 	if (items.attachments[0].type=="photo") {
-		var card = new SomeObjectCard(items.attachments[0].photo.photo_604, items.text)
+		var card = new SomeObjectCard(items.attachments[0].photo.photo_604, items.text);
 $('.cards-items').append(card);
 };
 
